@@ -25,7 +25,7 @@ const onGetphonenumber: UniHelper.ButtonOnGetphonenumber = async (ev) => {
 // 模拟手机号码快捷登录（开发练习）
 const onGetphonenumberSimple = async () => {
   await checkedAgreePrivacy()
-  const res = await postLoginWxMinSimpleAPI('13123456789')
+  const res = await postLoginWxMinSimpleAPI('17661297963')
   loginSuccess(res.result)
 }
 
@@ -87,9 +87,7 @@ const onOpenPrivacyContract = () => {
 <template>
   <view class="viewport">
     <view class="logo">
-      <image
-        src="https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/logo_icon.png"
-      ></image>
+      <image src="https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/logo_icon.png"></image>
     </view>
     <view class="login">
       <!-- 网页端表单登录 -->
@@ -102,11 +100,7 @@ const onOpenPrivacyContract = () => {
       <!-- 小程序端授权登录 -->
       <!-- #ifdef MP-WEIXIN -->
       <view class="button-privacy-wrap">
-        <button
-          :hidden="isAgreePrivacy"
-          class="button-opacity button phone"
-          @tap="checkedAgreePrivacy"
-        >
+        <button :hidden="isAgreePrivacy" class="button-opacity button phone" @tap="checkedAgreePrivacy">
           请先阅读并勾选协议
         </button>
         <button class="button phone" open-type="getPhoneNumber" @getphonenumber="onGetphonenumber">
@@ -154,6 +148,7 @@ page {
 .logo {
   flex: 1;
   text-align: center;
+
   image {
     width: 220rpx;
     height: 220rpx;
@@ -186,6 +181,7 @@ page {
     font-size: 28rpx;
     border-radius: 72rpx;
     color: #fff;
+
     .icon {
       font-size: 40rpx;
       margin-right: 6rpx;
@@ -203,6 +199,7 @@ page {
   .extra {
     flex: 1;
     padding: 70rpx 70rpx 0;
+
     .caption {
       width: 440rpx;
       line-height: 1;
@@ -210,6 +207,7 @@ page {
       font-size: 26rpx;
       color: #999;
       position: relative;
+
       text {
         transform: translate(-40%);
         background-color: #fff;
@@ -224,9 +222,11 @@ page {
       justify-content: center;
       align-items: center;
       margin-top: 70rpx;
+
       button {
         padding: 0;
         background-color: transparent;
+
         &::after {
           border: none;
         }
@@ -252,6 +252,7 @@ page {
         border-radius: 50%;
       }
     }
+
     .icon-weixin::before {
       border-color: #06c05f;
       color: #06c05f;
@@ -263,9 +264,11 @@ page {
   0% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(0, -5rpx);
   }
+
   100% {
     transform: translate(0, 0);
   }
@@ -277,6 +280,7 @@ page {
 
 .button-privacy-wrap {
   position: relative;
+
   .button-opacity {
     opacity: 0;
     position: absolute;
@@ -304,5 +308,4 @@ page {
     display: inline;
     color: #28bb9c;
   }
-}
-</style>
+}</style>
